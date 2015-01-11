@@ -1,0 +1,27 @@
+<html>
+<head>
+	<title>AC-info Demo</title>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="ac-info.js"></script>
+</head>
+<body>
+	<h1>AC-info Demo</h1>
+	<p>
+		Name: <span id="name"></span><br>
+		Players: <span id="players"></span>/<span id="slots"></span><br>
+		Online for: <span id="hours"></span> hours, <span id="minutes"></span> minutes and <span id="seconds"></span> seconds.
+	</p>
+	<script>
+		$(document).ready(function(){
+			ACinfo("5.231.63.236", "28764", function(data){
+				$("#name").html(data.server);
+				$("#players").html(data.players);
+				$("#slots").html(data.slots);
+				$("#hours").html(data.online.h);
+				$("#minutes").html(data.online.m);
+				$("#seconds").html(data.online.s);
+			});
+		});
+	</script>
+</body>
+</html>

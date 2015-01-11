@@ -20,14 +20,15 @@ if(!empty($getPort)){
 	$port = "28764";
 }
 
-function duration($seconds){
-	$hours = gmdate('H', $seconds);
-	$minutes = gmdate('i', $seconds);
-	$seconds = gmdate('s', $seconds);
-	$tmp = array();
+function duration($init){
+
+	$hours = floor($init / 3600);
+	$minutes = floor(($init / 60) % 60);
+	$seconds = $init % 60;
 	$tmp["h"] = $hours;
 	$tmp["m"] = $minutes;
 	$tmp["s"] = $seconds;
+	
 	return $tmp;
 }
 
