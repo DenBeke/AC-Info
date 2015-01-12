@@ -11,7 +11,7 @@ $getPort = $_GET["p"];
 if(!empty($getServer)){
 	$server = $getServer;
 }else{
-	$server = "5.231.63.236";
+	$server = "localhost";
 }
 
 if(!empty($getPort)){
