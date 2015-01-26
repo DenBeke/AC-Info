@@ -19,7 +19,7 @@ function html_escape_array(&$arr, $inner_call=false, $pointer=false, $check_doub
         return $pointer ? NULL : $arr;
         
     foreach ($arr as $key => &$value) 
-        !is_array($value) ? html_escape_value_helper($value) : html_escape_array(&$value, true); 
+        !is_array($value) ? html_escape_value_helper($value) : html_escape_array($value, true); 
         
     if (!$inner_call) {
         if ($check_double_escape) $arr[0][0][100000] = true; 
