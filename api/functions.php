@@ -31,7 +31,7 @@ function html_escape_array(&$arr, $inner_call=false, $pointer=false, $check_doub
 function strip_color_codes($server) {
     $tmp = "";
     $skip = false;
-    for($i = 0; $i <= strlen($server); $i++) {
+    for($i = 0; $i < strlen($server); $i++) {
         $c = $server[$i];
         if ($c == "") { $skip = true; continue; }
         if ($skip) { $skip = false; continue; }
